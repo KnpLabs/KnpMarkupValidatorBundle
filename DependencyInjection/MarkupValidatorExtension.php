@@ -49,6 +49,7 @@ class MarkupValidatorExtension extends Extension
     public function configLoad(array $configs, ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
+        $loader->load('service.xml');
 
         $configs = $this->mergeConfigs($configs);
 
@@ -84,7 +85,8 @@ class MarkupValidatorExtension extends Extension
     protected function mergeConfigs(array $configs)
     {
         $mergedConfigs = array(
-            'default_validator' => null
+            'default_validator' => null,
+            'validators'        => array()
         );
 
         foreach ($configs as $config) {
@@ -104,6 +106,8 @@ class MarkupValidatorExtension extends Extension
                 }
             }
         }
+
+        return $mergedConfigs;
     }
 
     /**
