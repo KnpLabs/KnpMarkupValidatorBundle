@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
  *
  * @author Antoine Hérault <antoine.herault@gmail.com>
  */
-class RegisterValidatorsPass implements CompilerPassInterface
+class RegisterProcessorsPass implements CompilerPassInterface
 {
     /**
      * {@inheritDoc}
