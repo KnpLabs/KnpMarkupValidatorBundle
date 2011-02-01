@@ -10,18 +10,17 @@ class TidyTest extends \PHPUnit_Framework_TestCase
     {
         $markup = "<!DOCTYPE html><html><head></head><body></body></html>";
 
-        $processor = $this->getMock('Knplabs\MarkupValidatorBundle\Validation\Processor\Tidy', array(), array('Tidy'));
+        $processor = $this->getMock('Knplabs\MarkupValidatorBundle\Validation\Processor\Tidy', array());
         $processor->expects($this->once())
             ->method('executeTidy')
-            ->with($this->equalTo($markup))
-            ->will($this->returnValue(array()));
+            ->with($this->equalTo($markup));
 
         $processor->execute($markup);
     }
 
     public function testParseLines()
     {
-        $processor = new Tidy('tidy');
+        $processor = new Tidy();
 
         $lines = array(
             '',

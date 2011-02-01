@@ -8,7 +8,6 @@
         <parameter key="markup_validator.processor.w3c.class">Knplabs\MarkupValidatorBundle\Validation\Processor\W3c</parameter>
         <parameter key="markup_validator.processor.w3c.uri">http://validator.w3.org/check</parameter>
         <parameter key="markup_validator.processor.tidy.class">Knplabs\MarkupValidatorBundle\Validation\Processor\Tidy</parameter>
-        <parameter key="markup_validator.processor.tidy.binary">tidy</parameter>
         <parameter key="markup_validator.result_factory.default.class">Knplabs\MarkupValidatorBundle\Validation\ResultFactory</parameter>
     </parameters>
 
@@ -19,7 +18,6 @@
         </service>
 
         <service id="markup_validator.processor.tidy" class="%markup_validator.processor.tidy.class%" public="false">
-            <argument>%markup_validator.processor.tidy.binary%</argument>
             <tag name="markup_validator.processor" alias="tidy" />
         </service>
     </services>

@@ -7,16 +7,16 @@ use Knplabs\MarkupValidatorBundle\Validation\ProcessorInterface;
 
 class Tidy implements ProcessorInterface
 {
-    protected $binary;
-
     /**
      * Constructor
      *
      * @param  string $binary The tidy binary to use to execute validation
      */
-    public function __construct($binary)
+    public function __construct()
     {
-        $this->binary = $binary;
+        if (!extension_loaded('tidy')) {
+            throw new \RuntimeException(sprintf('You must load the tidy extension to use the \'%s\' class.', get_class($this)));
+        }
     }
 
     /**
@@ -38,20 +38,9 @@ class Tidy implements ProcessorInterface
      */
     public function executeTidy($markup)
     {
-        // write the markup in a temporary file
-        $input = tempnam('/tmp', 'tidy');
-        file_put_contents($input, $markup);
+        $tidy = tidy_parse_string($markup);
 
-        // prepare another temporary file for the output
-        $output = tempnam('/tmp', 'tidy');
-
-        exec(sprintf('%s -e %s 2> %s', $this->binary, $input, $output));
-
-        $lines = file($output);
-
-        // remove temporary files
-        unlink($input);
-        unlink($output);
+        $lines = explode("\n", tidy_get_error_buffer($tidy));
 
         return $lines;
     }
