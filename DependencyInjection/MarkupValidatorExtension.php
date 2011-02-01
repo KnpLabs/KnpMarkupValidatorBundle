@@ -53,7 +53,7 @@ class MarkupValidatorExtension extends Extension
 
         $configs = $this->mergeConfigs($configs);
 
-        $default_validator = $configs['default_validator'];
+        $defaultValidator = $configs['default_validator'];
         $validators = $configs['validators'];
 
         foreach ($validators as $name => $options) {
@@ -68,12 +68,12 @@ class MarkupValidatorExtension extends Extension
         }
 
         // create alias for the default validator
-        if (!empty($default_validator)) {
-            if (!isset($validators[$default_validator])) {
-                throw new \InvalidArgumentException(sprintf('Invalid default validator: there is no \'%s\' validator defined.', $default_validator));
+        if (!empty($defaultValidator)) {
+            if (!isset($validators[$defaultValidator])) {
+                throw new \InvalidArgumentException(sprintf('Invalid default validator: there is no \'%s\' validator defined.', $defaultValidator));
             }
 
-            $container->setAlias('default_validator', sprintf('markup_validator.%s_validator', $default_validator));
+            $container->setAlias('markup_validator', sprintf('markup_validator.%s_validator', $defaultValidator));
         }
     }
 
