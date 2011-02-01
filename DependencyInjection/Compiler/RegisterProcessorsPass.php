@@ -20,10 +20,6 @@ class RegisterValidatorsPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('markup_validator')) {
-            return ;
-        }
-
         foreach ($container->findTaggedServiceIds('markup_validator.processor') as $id => $attributes) {
             if (isset($attributes[0]['alias'])) {
                 $container->setAlias(sprintf('markup_validator.%s_processor', $attributes[0]['alias']), $id);
