@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="markup_validator.validator.class">Knplabs\MarkupValidatorBundle\Validator</parameter>
+        <parameter key="markup_validator.validator.class">Knplabs\MarkupValidatorBundle\Validation\Validator</parameter>
         <parameter key="markup_validator.processor.w3c.class">Knplabs\MarkupValidatorBundle\Validation\Processor\W3c</parameter>
         <parameter key="markup_validator.processor.w3c.uri">http://validator.w3.org/check</parameter>
         <parameter key="markup_validator.processor.tidy.class">Knplabs\MarkupValidatorBundle\Validation\Processor\Tidy</parameter>
