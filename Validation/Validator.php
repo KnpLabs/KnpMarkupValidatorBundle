@@ -14,7 +14,7 @@ class Validator
 
     protected $processor;
 
-    public function __construct(Processor $processor)
+    public function __construct(ProcessorInterface $processor)
     {
         $this->processor = $processor;
     }
