@@ -13,7 +13,7 @@ The first step, when the bundle is installed in your project, is to define
 validators in your application configuration:
 
     # app/config/config.yml
-    markup_validator.config:
+    knplabs_markup_validator:
         default_validator:  default
         validators:
             default:

@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\Config\FileLocator;
 
 /**
  * Markup validator extension
@@ -38,7 +39,7 @@ use Symfony\Component\DependencyInjection\Reference;
  *
  * @author Antoine Hérault <antoine.herault@gmail.com>
  */
-class MarkupValidatorExtension extends Extension
+class KnplabsMarkupValidatorExtension extends Extension
 {
     /**
      * Load configuration
@@ -46,9 +47,9 @@ class MarkupValidatorExtension extends Extension
      * @param  array            $configs
      * @param  ContainerBuilder $container
      */
-    public function configLoad(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('service.xml');
 
         $configs = $this->mergeConfigs($configs);
@@ -62,7 +63,7 @@ class MarkupValidatorExtension extends Extension
             }
 
             $validatorDef = new Definition($container->getParameter('markup_validator.validator.class'));
-            $validatorDef->addArgument(new Reference(sprintf('markup_validator.%s_processor', $options['processor'])));
+            $validatorDef->addArgument(new Reference(sprintf('markup_validator.processor.%s', $options['processor'])));
 
             $container->setDefinition(sprintf('markup_validator.%s_validator', $name), $validatorDef);
         }
@@ -131,6 +132,6 @@ class MarkupValidatorExtension extends Extension
      */
     public function getAlias()
     {
-        return 'markup_validator';
+        return 'knplabs_markup_validator';
     }
 }

@@ -34,8 +34,11 @@ class W3c implements ProcessorInterface
         $output = $this->callService($markup);
 
         $messages = array();
-        foreach ($output->messages as $message) {
-            $messages[] = $this->normalizeMessage($message->toArray());
+        foreach((array)$output->messages as $message) {
+            $message = (array) $message;
+            if(false !== empty($message)) {
+                $messages[] = $this->normalizeMessage($message);
+            }
         }
 
         return $messages;
@@ -76,12 +79,11 @@ class W3c implements ProcessorInterface
             CURLOPT_POSTFIELDS  => array(
                 'fragment'  => $markup,
                 'output'    => 'json'
-            )
+            ),
         )));
 
         $output = curl_exec($curl);
-
-        if (false === $output) {
+        if (false === $output or empty($output)) {
             $error = curl_error($curl);
             curl_close($curl);
             throw new \RuntimeException(sprintf('Could not call the validation service due to a cURL error: %s.', $error));
@@ -89,7 +91,7 @@ class W3c implements ProcessorInterface
 
         curl_close($curl);
 
-        return json_decode($output);
+        return (object) json_decode($output);
     }
 
     /**
@@ -101,6 +103,7 @@ class W3c implements ProcessorInterface
     {
         $mergedOptions = $this->options;
         $mergedOptions[CURLOPT_URL] = $this->uri;
+        $mergedOptions[CURLOPT_RETURNTRANSFER] = true;
         foreach ($options as $key => $value) {
             $mergedOptions[$key] = $value;
         }

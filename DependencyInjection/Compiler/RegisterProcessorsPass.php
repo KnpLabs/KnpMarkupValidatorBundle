@@ -22,7 +22,7 @@ class RegisterProcessorsPass implements CompilerPassInterface
     {
         foreach ($container->findTaggedServiceIds('markup_validator.processor') as $id => $attributes) {
             if (isset($attributes[0]['alias'])) {
-                $container->setAlias(sprintf('markup_validator.%s_processor', $attributes[0]['alias']), $id);
+                $container->setAlias(sprintf('markup_validator.processor.%s', $attributes[0]['alias']), $id);
             }
         }
     }
