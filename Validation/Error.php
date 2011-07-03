@@ -1,6 +1,6 @@
 <?php
 
-namespace Knplabs\MarkupValidatorBundle\Validation;
+namespace Knp\MarkupValidatorBundle\Validation;
 
 class Error
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Knplabs\MarkupValidatorBundle;
+namespace Knp\MarkupValidatorBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Knplabs\MarkupValidatorBundle\DependencyInjection\Compiler\RegisterProcessorsPass;
+use Knp\MarkupValidatorBundle\DependencyInjection\Compiler\RegisterProcessorsPass;
 
-class KnplabsMarkupValidatorBundle extends Bundle
+class KnpMarkupValidatorBundle extends Bundle
 {
     public function registerExtensions(ContainerBuilder $container)
     {

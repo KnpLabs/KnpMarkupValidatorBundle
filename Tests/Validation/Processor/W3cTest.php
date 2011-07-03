@@ -1,8 +1,8 @@
 <?php
 
-namespace Knplabs\MarkupValidatorBundle\Validation\Processor;
+namespace Knp\MarkupValidatorBundle\Validation\Processor;
 
-use Knplabs\MarkupValidatorBundle\Validation\Validator;
+use Knp\MarkupValidatorBundle\Validation\Validator;
 
 class W3cTest extends \PHPUnit_Framework_TestCase
 {

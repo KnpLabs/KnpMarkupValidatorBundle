@@ -1,6 +1,6 @@
 <?php
 
-namespace Knplabs\MarkupValidatorBundle\DependencyInjection;
+namespace Knp\MarkupValidatorBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
@@ -31,7 +31,7 @@ use Symfony\Component\Config\FileLocator;
  * the "markup_validator" service alias will be created.
  *
  * To register a processor, you simply need to define a service for a class
- * implementing the Knplabs\MarkupValidatorBundle\Validation\ProcessorInterface
+ * implementing the Knp\MarkupValidatorBundle\Validation\ProcessorInterface
  * with the tag "markup_validator.processor" and the wanted alias. The
  * extension will create a service for each validator named as below:
  *
@@ -39,7 +39,7 @@ use Symfony\Component\Config\FileLocator;
  *
  * @author Antoine Hérault <antoine.herault@gmail.com>
  */
-class KnplabsMarkupValidatorExtension extends Extension
+class KnpMarkupValidatorExtension extends Extension
 {
     /**
      * Load configuration
@@ -132,6 +132,6 @@ class KnplabsMarkupValidatorExtension extends Extension
      */
     public function getAlias()
     {
-        return 'knplabs_markup_validator';
+        return 'knp_markup_validator';
     }
 }
