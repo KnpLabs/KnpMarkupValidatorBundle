@@ -1,6 +1,6 @@
 <?php
 
-namespace Knp\MarkupValidatorBundle\Validation;
+namespace Knp\Bundle\MarkupValidatorBundle\Validation;
 
 /**
  * Interface for the validation processors

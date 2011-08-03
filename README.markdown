@@ -39,7 +39,7 @@ The bundle provides two processors:
  * *tidy* which uses the tidy binary
 
 If you want to define your own validator, you simply need to create a service
-implementing the `Knp\MarkupValidatorBundle\Validation\ProcessorInterface`
+implementing the `Knp\Bundle\MarkupValidatorBundle\Validation\ProcessorInterface`
 with the `markup_validator.processor` tag and its name as alias tag attribute.
 The extension will create a service for each validator named as follow:
 `markup_validator.{{ alias }}_processor`.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Knp\MarkupValidatorBundle\DependencyInjection\Compiler;
+namespace Knp\Bundle\MarkupValidatorBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

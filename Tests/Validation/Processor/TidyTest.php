@@ -1,8 +1,8 @@
 <?php
 
-namespace Knp\MarkupValidatorBundle\Validation\Processor;
+namespace Knp\Bundle\MarkupValidatorBundle\Validation\Processor;
 
-use Knp\MarkupValidatorBundle\Validation\Validator;
+use Knp\Bundle\MarkupValidatorBundle\Validation\Validator;
 
 class TidyTest extends \PHPUnit_Framework_TestCase
 {
@@ -10,7 +10,7 @@ class TidyTest extends \PHPUnit_Framework_TestCase
     {
         $markup = "<!DOCTYPE html><html><head></head><body></body></html>";
 
-        $processor = $this->getMock('Knp\MarkupValidatorBundle\Validation\Processor\Tidy', array());
+        $processor = $this->getMock('Knp\Bundle\MarkupValidatorBundle\Validation\Processor\Tidy', array());
         $processor->expects($this->once())
             ->method('executeTidy')
             ->with($this->equalTo($markup));

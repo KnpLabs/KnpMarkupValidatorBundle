@@ -1,9 +1,9 @@
 <?php
 
-namespace Knp\MarkupValidatorBundle\Validation\Processor;
+namespace Knp\Bundle\MarkupValidatorBundle\Validation\Processor;
 
-use Knp\MarkupValidatorBundle\Validation\Validator;
-use Knp\MarkupValidatorBundle\Validation\ProcessorInterface;
+use Knp\Bundle\MarkupValidatorBundle\Validation\Validator;
+use Knp\Bundle\MarkupValidatorBundle\Validation\ProcessorInterface;
 
 class W3c implements ProcessorInterface
 {
