@@ -10,11 +10,12 @@ class TidyTest extends \PHPUnit_Framework_TestCase
     {
         $markup = "<!DOCTYPE html><html><head></head><body></body></html>";
 
-        $processor = $this->getMock('Knp\Bundle\MarkupValidatorBundle\Validation\Processor\Tidy', array());
+        $processor = $this->getMock('Knp\Bundle\MarkupValidatorBundle\Validation\Processor\Tidy', array('executeTidy'));
         $processor->expects($this->once())
             ->method('executeTidy')
-            ->with($this->equalTo($markup));
-
+            ->with($this->equalTo($markup))
+            ->will($this->returnValue(array()))
+        ;
         $processor->execute($markup);
     }
 
