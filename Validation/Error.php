@@ -10,9 +10,9 @@ class Error
 
     public function __construct($line, $column, $message)
     {
-        $this->line;
-        $this->column;
-        $this->message;
+        $this->line = $line;
+        $this->column = $column;
+        $this->message = $message;
     }
 
     public function getLine()
