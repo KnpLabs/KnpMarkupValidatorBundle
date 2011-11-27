@@ -6,10 +6,49 @@ projects.
 
 This bundle is in early development state, so any contribution is welcome! ;)
 
+Installation
+------------
+
+If you use a `deps` file, add:
+
+    [KnpMarkupValidatorBundle]
+        git=http://github.com/knplabs/KnpMarkupValidatorBundle.git
+        target=/bundles/Knp/Bundle/MarkupValidatorBundle
+
+Or if you want to clone the repo:
+
+    git clone git://github.com/knplabs/KnpMarkupValidatorBundle.git vendor/bundles/Knp/Bundle/MarkupValidatorBundle
+
+### Add the namespace to your autoloader
+
+``` php
+<?php
+// File: app/autoload.php
+$loader->registerNamespaces(array(
+    'Knp\\Bundle'      => __DIR__.'/../vendor/bundles',
+    // ...
+));
+```
+
+### Add MarkupValidatorBundle to your application kernel
+
+``` php
+<?php
+    // File: app/AppKernel.php
+    public function registerBundles()
+    {
+        return array(
+            // ...
+            new Knp\Bundle\MarkupValidatorBundle\KnpMarkupValidatorBundle(),
+            // ...
+        );
+    }
+```
+
 Define validators
 -----------------
 
-The first step, when the bundle is installed in your project, is to define
+The first step, after the bundle is installed in your project, is to define
 validators in your application configuration:
 
     # app/config/config.yml
