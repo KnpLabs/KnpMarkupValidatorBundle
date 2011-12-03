@@ -12,12 +12,12 @@ Installation
 If you use a `deps` file, add:
 
     [KnpMarkupValidatorBundle]
-        git=http://github.com/knplabs/KnpMarkupValidatorBundle.git
+        git=http://github.com/KnpLabs/KnpMarkupValidatorBundle.git
         target=/bundles/Knp/Bundle/MarkupValidatorBundle
 
 Or if you want to clone the repo:
 
-    git clone git://github.com/knplabs/KnpMarkupValidatorBundle.git vendor/bundles/Knp/Bundle/MarkupValidatorBundle
+    git clone git://github.com/KnpLabs/KnpMarkupValidatorBundle.git vendor/bundles/Knp/Bundle/MarkupValidatorBundle
 
 ### Add the namespace to your autoloader
 
