@@ -3,7 +3,7 @@
     "type":        "symfony-bundle",
     "description": "Provide markup validation for your Symfony2 based projects.",
     "keywords":    ["markdown", "validator", "knplabs", "knp", "bundle"],
-    "homepage":    "http://github.com/KnpLabs/KnpMarkdownValidatorBundle",
+    "homepage":    "http://github.com/KnpLabs/KnpMarkupValidatorBundle",
     "license":     "MIT",
 
     "authors": [
@@ -13,7 +13,7 @@
         },
         {
             "name": "Symfony Community",
-            "homepage": "http://github.com/KnpLabs/KnpMarkdownValidatorBundle/contributors"
+            "homepage": "http://github.com/KnpLabs/KnpMarkupValidatorBundle/contributors"
         }
     ],
 
@@ -24,9 +24,9 @@
 
     "autoload": {
         "psr-0": {
-            "Knp\\Bundle\\MarkdownValidatorBundle": ""
+            "Knp\\Bundle\\MarkupValidatorBundle": ""
         }
     },
 
-    "target-dir": "Knp/Bundle/MarkdownValidatorBundle"
+    "target-dir": "Knp/Bundle/MarkupValidatorBundle"
 }
