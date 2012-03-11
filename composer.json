@@ -1,8 +1,8 @@
 {
-    "name":        "knplabs/knp-markdown-validator-bundle",
+    "name":        "knplabs/knp-markup-validator-bundle",
     "type":        "symfony-bundle",
     "description": "Provide markup validation for your Symfony2 based projects.",
-    "keywords":    ["markdown", "validator", "knplabs", "knp", "bundle"],
+    "keywords":    ["markup", "validator", "knplabs", "knp", "bundle"],
     "homepage":    "http://github.com/KnpLabs/KnpMarkupValidatorBundle",
     "license":     "MIT",
 
